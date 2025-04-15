@@ -2,3 +2,4 @@ ColumnasDeseadas = ["SepalLengthCm", "SepalWidthCm", "PetalLengthCm", "PetalWidt
                     "Species"]
 NumDataIris = 150
 NumCamposDeseados = len(ColumnasDeseadas)
+PathDB = "./Iris/Iris.csv"

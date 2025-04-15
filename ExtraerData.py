@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from Variables import ColumnasDeseadas, NumDataIris
+from Variables import ColumnasDeseadas, NumDataIris, PathDB
 
 
 # porcentaje de datos que tendrá el test.
@@ -12,7 +12,6 @@ def ExtractDataIris(porcTest=0.2):
 
     np.random.seed(37)
 
-    PathDB = "./Iris/Iris.csv"
     pdIris = pd.read_csv(PathDB)
 
     TotalData = np.empty((NumDataIris, 0))
