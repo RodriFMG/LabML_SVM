@@ -1,6 +1,6 @@
 from sklearn.svm import SVC
-from PreProcesamiento import NormalizeFeatures
 from ExtraerData import ExtractDataIris
+from PreProcesamiento import NormalizeFeatures
 from Metricas import Metricas
 
 if __name__ == "__main__":
