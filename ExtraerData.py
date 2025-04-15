@@ -6,6 +6,12 @@ from Variables import ColumnasDeseadas, NumDataIris
 
 # porcentaje de datos que tendrá el test.
 def ExtractDataIris(porcTest=0.2):
+
+    if porcTest <= 0 or porcTest >= 1:
+        raise ValueError("Se debe pasar un porcentaje en el rango <0, 1>")
+
+    np.random.seed(37)
+
     PathDB = "./Iris/Iris.csv"
     pdIris = pd.read_csv(PathDB)
 

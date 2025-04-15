@@ -1,9 +1,11 @@
 from sklearn.svm import SVC
 from PreProcesamiento import NormalizeFeatures
 from ExtraerData import ExtractDataIris
+from Metricas import Metricas
 
 if __name__ == "__main__":
-    x_train, y_train, x_test, y_test = ExtractDataIris(0.2)
+
+    x_train, y_train, x_test, y_test = ExtractDataIris(0.1)
     x_train, x_test = NormalizeFeatures(x_train, x_test)
 
     # Kernel lineal
@@ -17,3 +19,12 @@ if __name__ == "__main__":
     # Kernel sigmoid
     svm_sigmoid = SVC(kernel='sigmoid')
     svm_sigmoid.fit(x_train, y_train)
+
+    print("Desempeño del Kernel Lineal: ")
+    Metricas(x_test, y_test, svm_lineal)
+
+    print("\nDesempeño del Kernel Polynomial: ")
+    Metricas(x_test, y_test, svm_poly)
+
+    print("\nDesempeño del Kernel Sigmoidal: ")
+    Metricas(x_test, y_test, svm_sigmoid)
