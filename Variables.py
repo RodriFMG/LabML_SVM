@@ -9,5 +9,7 @@ from sklearn.svm import SVC
 TypeModel = {
     'linear': SVC(kernel='linear'),
     'sigmoid': SVC(kernel='sigmoid'),
-    'poly': SVC(kernel='poly', degree=3)
+    'poly3': SVC(kernel='poly', degree=3),
+    'poly2': SVC(kernel='poly', degree=2),
+    'poly4': SVC(kernel='poly', degree=4)
 }

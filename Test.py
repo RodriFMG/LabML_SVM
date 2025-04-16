@@ -8,7 +8,7 @@ import numpy as np
 # Testeo de modelos, ejecutaremos una cierta cantidad de veces el modelo y promediaremos los resultados.
 
 def TestingModel(NumIters=1e+2, model="linear"):
-    if model not in ['linear', 'sigmoid', 'poly']:
+    if model not in ['linear', 'sigmoid', 'poly3', 'poly2', 'poly4']:
         raise ValueError(f"Se esperaba un modelo linear, sigmoid o poly, pero se encontró: {model}")
 
     F1History = []
@@ -49,7 +49,7 @@ matplotlib.use("TkAgg")
 import matplotlib.pyplot as plt
 
 
-def GraficoComparativo(MetricModel1, MetricModel2, MetricModel3, SaveFig):
+def GraficoComparativo(MetricModel1, MetricModel2, SaveFig, MetricModel4 = None, MetricModel5 = None, MetricModel3= None):
     iteraciones = list(range(1, len(MetricModel1) + 1))
 
     plt.figure(figsize=(10, 6))
@@ -57,7 +57,14 @@ def GraficoComparativo(MetricModel1, MetricModel2, MetricModel3, SaveFig):
     # Dibujar las líneas
     plt.plot(iteraciones, MetricModel1, color='red', label='Linear')
     plt.plot(iteraciones, MetricModel2, color='blue', label='Sigmoid')
-    plt.plot(iteraciones, MetricModel3, color='green', label='Poly')
+
+
+    if MetricModel3:
+        plt.plot(iteraciones, MetricModel3, color='green', label='Poly G3')
+    if MetricModel4:
+        plt.plot(iteraciones, MetricModel4, color='black', label='Poly G2')
+    if MetricModel5:
+        plt.plot(iteraciones, MetricModel5, color='orange', label='Poly G4')
 
     # Títulos y leyenda
     plt.title('Comparación de Desempeño de Modelos')
