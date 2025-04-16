@@ -10,7 +10,7 @@ def ExtractDataIris(porcTest=0.2):
     if porcTest <= 0 or porcTest >= 1:
         raise ValueError("Se debe pasar un porcentaje en el rango <0, 1>")
 
-    np.random.seed(37)
+    #np.random.seed(37)
 
     pdIris = pd.read_csv(PathDB)
 
@@ -22,8 +22,8 @@ def ExtractDataIris(porcTest=0.2):
 
     # Permutación aleatoria.
     np.random.shuffle(TotalData)
-    x = TotalData[:, 0:4]
-    y = TotalData[:, 4]
+    x = TotalData[:, :-1]
+    y = TotalData[:, -1]
 
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=porcTest)
 

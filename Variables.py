@@ -3,3 +3,11 @@ ColumnasDeseadas = ["SepalLengthCm", "SepalWidthCm", "PetalLengthCm", "PetalWidt
 NumDataIris = 150
 NumCamposDeseados = len(ColumnasDeseadas)
 PathDB = "./Iris/Iris.csv"
+
+from sklearn.svm import SVC
+
+TypeModel = {
+    'linear': SVC(kernel='linear'),
+    'sigmoid': SVC(kernel='sigmoid'),
+    'poly': SVC(kernel='poly', degree=3)
+}
