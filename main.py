@@ -12,6 +12,6 @@ if __name__ == "__main__":
     F1Poly4, AccPoly4, CMPoly4 = TestingModel(model='poly4')
 
     GraficoComparativo(F1Linear, F1Sigmoid, SaveFig="F1Score",
-                       MetricModel3=None, MetricModel4=None, MetricModel5=None)
+                       MetricModel3=F1Poly3, MetricModel4=None, MetricModel5=None)
     GraficoComparativo(AccLinear, AccSigmoid, SaveFig="Accuracy",
-                       MetricModel3=None, MetricModel4=None, MetricModel5=None)
+                       MetricModel3=AccPoly3, MetricModel4=None, MetricModel5=None)

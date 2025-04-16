@@ -21,10 +21,10 @@ def TestingModel(NumIters=1e+2, model="linear"):
         x_train, y_train, x_test, y_test = ExtractDataIris(0.2)
         x_train, x_test = NormalizeFeatures(x_train, x_test)
 
-        svm_lineal = TypeModel[model]
-        svm_lineal.fit(x_train, y_train)
+        SVModel = TypeModel[model]
+        SVModel.fit(x_train, y_train)
 
-        CM, F1, ACC = Metricas(x_test, y_test, model=svm_lineal)
+        CM, F1, ACC = Metricas(x_test, y_test, model=SVModel)
 
         F1History.append(F1)
         AccHistoty.append(ACC)
